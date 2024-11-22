@@ -1,11 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agujero Negro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Explorando el Espacio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            background: url('https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000394/GSFC_20171208_Archive_e000394~orig.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            font-size: 2em;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin: 0 15px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: gold;
+        }
+        .content {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .image-row {
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .image-row img {
+            width: 30%;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .image-row img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            font-size: 0.9em;
+        }
+        .image-item img {
+            width: 100%; /* Se ajusta al ancho del contenedor */
+            max-width: 300px; /* Tamaño máximo para mantener consistencia */
+            height: auto; /* Mantiene la proporción */
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .image-item {
+            text-align: center; /* Centra la imagen y el texto */
+            margin: 0 auto; /* Centra los elementos en pantallas grandes */
+        }
+        
+        .image-row {
+            display: flex;
+            flex-wrap: wrap; /* Ajusta las imágenes en pantallas pequeñas */
+            justify-content: center;
+            gap: 20px; /* Espaciado entre las imágenes */
+        }
+        
+        
+    </style>
 </head>
 <body>
-    <p>Primer</p>
+    <header>
+        REPRESENTACIÓN DE LA ATRACCIÓN DE LOS HACES DE LUZ POR UN AGUJERO NEGRO EN UNA ANIMACIÓN TRIDIMENSIONAL
+    </header>
+    <nav>
+        <a href="#Educacional">Educacional</a>
+        <a href="#Cientifico">Científico</a>
+    </nav>
+
+    <!-- Sección Educacional -->
+    <div class="content" id="Educacional">
+        <h2 class="section-title">Educacional</h2>
+        <div class="image-row">
+            <figure class="image-item">
+                <img src="absorcion1.png" alt="Educacional 1" data-bs-toggle="modal" data-bs-target="#modal1">
+                <figcaption>Absorción Completa - Educativo</figcaption>
+            </figure>                                    
+            <figure class="image-item">
+                <img src="expulsion1.png" alt="Educacional 2" data-bs-toggle="modal" data-bs-target="#modal2">
+                <figcaption>Expulsión tras orbitar - Educativo</figcaption>
+            </figure>            
+            <figure class="image-item">
+                <img src="deflex1.png" alt="Educacional 3" data-bs-toggle="modal" data-bs-target="#modal3">
+                <figcaption>Deflexion - Educativo</figcaption>
+            </figure>            
+        </div>
+    </div>
+
+    <!-- Sección Científica -->
+    <div class="content" id="Cientifico">
+        <h2 class="section-title">Cientifico</h2>
+        <div class="image-row">
+            <figure class="image-item">
+                <img src="abs2.png" alt="Cientifico 1" data-bs-toggle="modal" data-bs-target="#modal4">
+                <figcaption>Absorción Completa - Científico</figcaption>
+            </figure>                                    
+            <figure class="image-item">
+                <img src="exp2.png" alt="Cientifico 2" data-bs-toggle="modal" data-bs-target="#modal5">
+                <figcaption>Expulsión tras orbitar - Educativo</figcaption>
+            </figure>            
+            <figure class="image-item">
+                <img src="def2.png" alt="Cientifico 3" data-bs-toggle="modal" data-bs-target="#modal6">
+                <figcaption>Deflexion - Cientifico</figcaption>
+            </figure>            
+        </div>
+    </div>
+
+    <!-- Modales -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video 1 - Educacional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="100%" height="400" src="Absorcion.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video 2 - Educacional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="100%" height="400" src="expulson.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video 3 - Educacional</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="100%" height="400" src="deflex.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <<div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video 1 - Científico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="100%" height="400" src="absorcion1.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video 2 - Científico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="100%" height="400" src="exp1.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Video 3 - Científico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe width="100%" height="400" src="def2.mp4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Repite esta estructura para los demás modales (modal4, modal5, modal6) -->
+
+    <footer>
+        &copy; Adaya Daniela Hernandez Cerón - 2024 - Universidad Autónoma del Estado de Hidalgo
+    </footer>
 </body>
 </html>
